@@ -165,3 +165,18 @@ flex-shrink: 0;
 .fr {
   float: right;
 }
+.loadMoreP {
+  text-align: center;
+  color: #666;
+  background: #fff;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  line-height: 55rpx;
+}
+.noMoreP {
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  line-height: 55rpx;
+}

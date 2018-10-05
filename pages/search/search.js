@@ -20,16 +20,6 @@ Page(Object.assign({
             }
         ],
         spinners: [],
-        storelist: [
-            {
-                name: '仁和春天酒店·婚宴',
-                photo: 'http://p0.meituan.net/wedding/d577b0c3f3f5c382f7b33ed0d54366843826610.jpg%40630w_380h_1e_1c_1l%7Cwatermark%3D0',
-                star: 4.4,
-                price: '1599元/桌起',
-                buztype: '星级酒店',
-                km: '1.6km',
-            }
-        ],
         goods: [
           {
           }
@@ -129,6 +119,9 @@ Page(Object.assign({
           }
           else {
             _this.toastmsg('相关产品为空')
+            _this.setData({
+              hasMore: false,
+            })
           }
         }
       })
@@ -202,6 +195,7 @@ Page(Object.assign({
       })
     },
     surePiceFun () { //价格范围搜索
+    var _this = this;
       this.setData({
         showPrice: false
       })
