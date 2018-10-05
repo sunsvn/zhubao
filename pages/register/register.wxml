@@ -1,0 +1,28 @@
+<!--pages/register/register.wxml-->
+<view class="page">
+  <view>
+    <p class="inptxt">手机号码（你的登录账号）</p>
+    <view class="inpbox">
+      <input placeholder="请输入手机号" value="{{reg.phone}}" bindinput="inputgetName" data-name='reg.phone' maxlength="11"></input>
+    </view>
+    <p class="inptxt">验证码</p>
+    <view class="inpbox">
+      <input class="samllinp" placeholder="请输入验证码" value="{{reg.yzm}}" bindinput="inputgetName" data-name='reg.yzm' maxlength='11' ></input>
+      <view class="yzmbtn" bindtap="getyzm" wx:if="{{!showTime}}" >获取验证码</view>
+      <view class="yzmbtn" wx:if='{{showTime}}'>{{timerNum}}s</view>
+    </view>
+    <p class="inptxt">登录密码</p>
+    <view class="inpbox">
+      <input placeholder="请输入登录密码（6~12位数字或字母）"  type="password" value="{{reg.password}}" bindinput="inputgetName" data-name='reg.password'></input>
+    </view>
+    <p class="inptxt">确认密码</p>
+    <view class="inpbox">
+      <input placeholder="请确认登录密码" type="password" value="{{reg.passwordRe}}" bindinput="inputgetName" data-name='reg.passwordRe'></input>
+    </view>
+    <p class="inptxt">授权码</p>
+    <view class="inpbox">
+      <input placeholder="请输入授权码" value="{{login.code}}" bindinput="inputgetName" data-name='reg.code'></input>
+    </view>
+  </view>
+  <view class="loginbtn" bindtap="regFun">注 册</view>
+</view>

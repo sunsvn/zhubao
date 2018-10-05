@@ -1,0 +1,61 @@
+<import src='../../components/star/star.wxml' />
+<import src='../../components/storeitem/storeitem.wxml'/>
+<import src="../../components/good/good.wxml"/>
+<view class='container'>
+  <view class='search'>
+    <icon type="search" color="#4c4c4c" size="18"></icon>
+    <input type="text" maxlength="100" placeholder="输入珠宝名称" placeholder-style="color:#999999" />
+  </view>
+  <view class='navbtns'>
+    <view class='navitem nearby' bindtap='navitation' data-id='01'>
+      分类
+      <image src="{{selectedNav === '01' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+    <view class='line'></view>
+    <view class='navitem sort' bindtap='navitation' data-id='02'>
+      品牌
+      <image src="{{selectedNav === '02' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+    <view class='line'></view>
+    <view class='navitem rank' bindtap='navitation' data-id='03'>
+      价格排序
+      <image src="{{selectedNav === '03' ? '../../images/arrow_up.png' : '../../images/arrow_down.png'}}"></image>
+    </view>
+  </view>
+   <view class='wrap'>
+    <scroll-view class='scroller' style="width:{{width}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
+      <!-- <block wx:for='{{storelist}}' wx:for-item='store' wx:key='*this'>
+      <template is="store" data="{{store}}"/>
+      </block> -->
+    </scroll-view>
+    <view class='spinner' wx:if='{{showspinner}}'>
+      <view class='items'>
+        <block wx:for="{{spinners}}" wx:for-item='item' wx:key="item.id">
+          <view class='item' bindtap='spinnerclick'>{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+  </view> 
+  <view class="goodswrap">
+    <view class='goods'>
+      <block  wx:for="{{goods}}" wx:for-item='good' wx:key='*this' >
+
+        <template is="good" data="{{good:good}}"/>
+        
+      </block>
+      <view class="clear"></view>
+    </view>
+  </view>
+  <view class="priceBtn" bindtap="showPriceFun">价格筛选</view>
+  <view class="priceBox" hidden='{{showPrice == false}}'>
+    <view class="priceBoxIn">
+      <view class="priceBoxInP">最低价</view>
+      <input class="priceBoxInput" placeholder="请输入最低价格（元）" value="{{login.phone}}" bindinput="inputgetName" data-name='login.phone' ></input>
+      <view class="priceBoxInP">最高价</view>
+      <input class="priceBoxInput" placeholder="请输入最高价格（元）"></input>
+      <view class="surePrice fl" bindtap="hidePriceFun">取消</view>
+      <view class="surePrice fre" bindtap='surePiceFun'>确定</view>
+    </view>
+    
+  </view>
+</view>

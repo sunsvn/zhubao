@@ -1,0 +1,53 @@
+<import src="../../components/good/good.wxml"/>
+<!--index.wxml-->
+<view class='search'>
+    <icon type="search" color="#4c4c4c" size="18"></icon>
+    <input type="text" maxlength="100" placeholder="输入珠宝名称" value="{{search.keyword}}" bindinput="inputgetName" data-name='search.keyword'  placeholder-style="color:#999999" />
+    <view class="searchBtnIcon" bindtap="searchNow">GO</view>
+  </view>
+<scroll-view class='scroller' style="width:{{width}}px;height:{{height}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
+  <swiper class='banners' indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-color="#fff" indicator-active-color="#fce8cb">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.image_url}}" class="banner" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='funcs'>
+    <view class='func cur' wx:for="{{functions}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick' data-id="{{item.id}}">
+      <image src="{{item.icon_url}}" mode="aspectFill"></image>
+      <view class='name'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class="flsec">
+    <view class="secItem"  wx:for="{{seclist}}" wx:for-item='item' wx:key='item.id' bindtap='searchlist' data-brandid="{{item.id}}" >
+      <image src="{{item.app_list_pic_url}}"></image>
+      <view class="secItemp">{{item.name}}</view>
+    </view>
+  </view>
+  <view class='maylike'>
+  <!-- <view class='title'>猜你喜欢</view> -->
+  <view class='goods'>
+
+  <block  wx:for="{{goods}}" wx:for-item='good' wx:key='*this'>
+    <view class='good' bindtap='goodDetail' data-zbid='{{good.id}}'>
+      <image src="{{good.primary_pic_url}}" mode="aspectFill"></image>
+      <view class='mask'></view>
+      <view class='info'>
+        <view class='title'>
+          <text>{{good.name}}</text>
+        </view>
+      </view>
+      <view class='bottom'>
+        <view class='price'>￥{{good.retail_price}}</view>
+        <view class='oldprice'>￥{{good.market_price}}</view>
+        <view class='selled'>浏览 {{good.is_app_exclusive}}</view>
+      </view>
+	</view>
+    
+  </block>
+  <view class="clear"></view>
+  
+  </view>
+  </view>
+</scroll-view>

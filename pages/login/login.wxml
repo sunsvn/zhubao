@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+
+<!--pages/register/register.wxml-->
+<view class="page">
+  <view>
+    <p class="inptxt">手机号码（你的登录账号）</p>
+    <view class="inpbox">
+      <input placeholder="请输入手机号" value="{{login.phone}}" bindinput="inputgetName" data-name='login.phone' maxlength='11'></input>
+    </view>
+    <p class="inptxt">登录密码</p>
+    <view class="inpbox">
+      <input placeholder="请输入登录密码" value="{{login.pwd}}" bindinput="inputgetName" data-name='login.pwd'></input>
+    </view>
+  </view>
+  <view class="loginbtn" bindtap="loginFun" >登 录</view>
+  <view class="regP"><view bindtap="toReg">去注册</view></view>
+</view>

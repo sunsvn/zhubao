@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    
+    "pages/storelist/storelist",
+    "pages/goods/goods",
+    
+    "pages/login/login",
+    "pages/register/register",
+    "pages/home/home",
+    "pages/store/store",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fce8cb",
+    "navigationBarTitleText": "高级珠宝首饰",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#fce8cb",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/iconfont-home.png",
+        "selectedIconPath": "images/iconfont-home-active.png"
+      },
+      {
+        "pagePath": "pages/storelist/storelist",
+        "text": "首饰",
+        "iconPath": "images/iconfont-list.png",
+        "selectedIconPath": "images/iconfont-list-active.png"
+      }
+    ]
+  }
+}

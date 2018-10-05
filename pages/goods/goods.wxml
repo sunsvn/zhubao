@@ -1,0 +1,50 @@
+<import src='../../components/star/star.wxml' />
+<import src='../../components/comment/comment.wxml' />
+<view>
+  <view class='top'>
+    <swiper class='banners' indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-color="#fff" indicator-active-color="#fce8cb">
+      <block wx:for="{{goods.info.list_pic_url}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" class="banner" mode="aspectFill" bindtap='banner' data-index='{{index}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='marsk'></view>
+    <view class='info'>
+      <view class='name'>{{goods.info.name}}</view>
+      <view class='dec'>{{goods.info.goods_brief}}</view>
+    </view>
+  </view>
+  <view class='grounp border_top_bottom'>
+    <view class='title'>产品详情</view>
+    <block >
+      <view class='grounp_item'>
+        <view class='name'>商品品牌：</view>
+        <view class='value'>{{goods.brand.name}}</view>
+      </view>
+      <!-- <view class='grounp_item'>
+        <view class='name'>商品材质：</view>
+        <view class='value'>{{info.info.goods_material}}</view>
+      </view> -->
+      <view class='grounp_item'>
+        <view class='name'>商品款号：</view>
+        <view class='value'>{{goods.brand.simple_desc}}</view>
+      </view>
+      <view class='grounp_item' wx:for="{{goods.specificationList}}" wx:for-item='item' wx:key='item.id'>
+        <view class='name'>{{item.name}}：</view>
+        <view class='value'>{{item.value}}</view>
+      </view>
+    </block>
+    <!-- <view class='describe'>
+      <text>{{goods.group.describe}}</text>
+    </view> -->
+  </view>
+  <view class='grounp border_top_bottom mb'>
+    <view class='title'>备注</view>
+    <view class='bz'>{{goods.info.goods_desc}}</view>
+  </view>
+</view>
+<view class='buy'>
+  <view class='price'><span>销售价格:</span>￥{{goods.info.retail_price}}</view>
+  <view class='price'><span>专柜价格:</span>￥{{goods.info.market_price}}</view>
+</view>
