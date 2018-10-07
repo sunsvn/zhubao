@@ -214,5 +214,11 @@ Page(Object.assign({
       page: 1
     })
     _this.getList();
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '高级珠宝定制',
+      path: '/pages/home/home'
+    }
   }
 }, commonMixin))

@@ -52,5 +52,11 @@ Page({
       wx.makePhoneCall({
         phoneNumber: '18581885527',
       })
+    },
+  onShareAppMessage: function () {
+    return {
+      title: '高级珠宝定制',
+      path: '/pages/home/home'
     }
+  }
 })

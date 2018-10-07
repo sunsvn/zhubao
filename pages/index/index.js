@@ -176,6 +176,12 @@ Page(Object.assign({
     wx.navigateTo({
       url: '../search/search?keyword=' + keyword,
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '高级珠宝定制',
+      path: '/pages/home/home'
+    }
   }
 
 }, commonMixin))
